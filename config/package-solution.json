@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "comment-spfx-client-side-solution",
+    "id": "9885ca98-acec-4669-82bb-aedf262cb1de",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.18.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "comment-spfx description"
+      },
+      "longDescription": {
+        "default": "comment-spfx description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "comment-spfx Feature",
+        "description": "The feature that activates elements of the comment-spfx solution.",
+        "id": "1760f6b9-e0b4-4826-80c4-6705f7178b2b",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/comment-spfx.sppkg"
+  }
+}

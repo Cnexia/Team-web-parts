@@ -1,0 +1,21 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "18.19.1",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.12.0"
+    },
+    "version": "1.18.2",
+    "libraryName": "comment-spfx",
+    "libraryId": "9885ca98-acec-4669-82bb-aedf262cb1de",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "comment-spfx",
+    "solutionShortDescription": "comment-spfx description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
