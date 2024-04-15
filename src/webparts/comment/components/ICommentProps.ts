@@ -1,7 +1,6 @@
 export interface ICommentProps {
-  description: string;
-  isDarkTheme: boolean;
-  environmentMessage: string;
-  hasTeamsContext: boolean;
-  userDisplayName: string;
-}
+    description: string;
+    context: any;
+    comments: any[];
+  }
+  
