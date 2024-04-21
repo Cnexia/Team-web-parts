@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .logo {
+    margin-bottom: 20px;
+  }
+  
+  .animationContainer {
+    width: 100px; /* Adjust according to your animation size */
+    height: 100px; /* Adjust according to your animation size */
+    position: relative;
+  }
+  
+  .animation {
+    width: 100%;
+    height: 100%;
+    
+    position: absolute;
+    animation: spin 2s linear infinite;
+  }
+  
+  .message {
+    text-align: center;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  

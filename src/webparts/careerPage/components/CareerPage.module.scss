@@ -1,0 +1,14 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Your other SCSS styles */
+
+
+.CareerPage{
+  background-color: #CECECE; 
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}

@@ -1,0 +1,56 @@
+.Joboffers_holder{
+    position: relative;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    
+    grid-template-areas: 'EJO IJO EJOF'
+                         'EJO PP PP'  ;
+    width: 95%;
+    grid-gap: 1rem;
+    height: 1000px;
+    padding: 3rem;
+    
+}
+.external_job_offers{
+    grid-area: EJO;
+    background-color: #FFFFFF;
+    max-height: 1000px;
+    min-height: 1000px;
+    height: 100% !important; 
+    
+
+    
+    box-shadow: 0px 4px 7px 2px rgba(0,150,108,0.17);
+    -webkit-box-shadow: 0px 4px 7px 2px rgba(0,150,108,0.17);
+    -moz-box-shadow: 0px 4px 7px 2px rgba(0,150,108,0.17);
+}
+.ejo_container{
+    padding-bottom: 1.5rem;
+    
+   
+}
+.Internal_job_offers{
+    grid-area: IJO;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 7px 2px rgba(0,150,108,0.17);
+    -webkit-box-shadow: 0px 4px 7px 2px rgba(0,150,108,0.17);
+    -moz-box-shadow: 0px 4px 7px 2px rgba(0,150,108,0.17);
+        
+    
+}
+.Enternship_job_offers{
+    grid-area: EJOF;
+    background-color: #03B586;
+   
+    
+}
+.progress_path{
+    grid-area: PP;
+    height: 400px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 7px 2px rgba(0,150,108,0.17);
+    -webkit-box-shadow: 0px 4px 7px 2px rgba(0,150,108,0.17);
+    -moz-box-shadow: 0px 4px 7px 2px rgba(0,150,108,0.17);
+}
