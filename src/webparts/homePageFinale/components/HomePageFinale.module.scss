@@ -1,0 +1,18 @@
+.HomePage{
+  background-color: #ffffff; 
+  display: flex;
+  flex-direction: column;
+  
+  
+  margin-bottom: 3rem;
+}
+div#sp-appBar{
+  display: none;
+}
+div#sp-commandBar{
+  display: none;
+}
+body, h1, h2, p, ul, li {
+  margin: 0;
+  padding: 0;
+}

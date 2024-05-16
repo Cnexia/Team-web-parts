@@ -1,0 +1,197 @@
+
+/* ------------------- Section styling ---------------- */
+
+.learning_quick_links{
+    max-width: 103.4375rem;
+    width: 100%;
+    height: auto;
+    display: flex;
+    gap: 2rem;
+}
+
+.learning{
+    width: 33.625rem;
+    height: 31.25rem;
+    
+    background-color: #206EB7;
+}
+
+.banner{
+  display: flex;
+  gap: 1rem;
+  margin: .5rem;
+}
+.logo{
+  margin: 0;
+}
+
+.title{
+    color: #FFF;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  margin: 0;
+}
+
+
+
+.quick_links{
+    max-width: 68.5rem;
+    width: 100%;
+    height: 31.25rem;
+    background-color: #FFFFFF;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: 3px 1px 22px -4px rgba(0,0,0,0.39);
+    -webkit-box-shadow: 3px 1px 22px -4px rgba(0,0,0,0.39);
+    -moz-box-shadow: 3px 1px 22px -4px rgba(0,0,0,0.39);
+}
+
+.header{
+  display: flex;
+  gap: .5rem;
+  width: 100%;
+  margin: .5rem;
+}
+.title.quick-links{
+  color: #000;
+  font-family: Montserrat;
+  font-size: 1.625rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: auto 0 auto 0;
+
+}
+.logo_holder{
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background-color: #00AB7B;
+  margin: 0;
+}
+
+.svg_link_logo{
+  margin: auto;
+}
+
+.line{
+  background: rgba(0, 0, 0, 0.10);
+  width: 100%;
+  height: 2px;
+  margin-top: .2rem;
+}
+.logo_q{
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+}
+
+.cards{
+  
+  width: 100%;
+  height: 100%;
+  
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14.6875rem, 1fr));
+
+  overflow: auto;
+  overscroll-behavior: none auto ;
+
+
+  grid-gap: 10px;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+  
+}
+
+.card{
+  border-radius: 0.375rem;
+  background: #03B586;
+  width: 14.6875rem;
+  height: 10rem;
+
+}
+
+.video_container{
+  width: 100%;
+  height: 23.5rem;
+  background-color: #000000;
+  position: relative;
+  overflow: hidden;
+}
+
+.video_holder{
+  width: 100%;
+  height: 100%;
+  
+  z-index: 0;
+  display: flex;
+  margin: auto;
+}
+.video_container video{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Thumbnail */
+.video_thumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  
+  cursor: pointer;
+}
+.Play_cercle{
+  width: 7.1875rem;
+  height: 7.1875rem;
+  position: absolute;
+  z-index: 2;
+  
+  top: 30%;
+  left: 35%;
+  
+
+  border-radius: 50%;
+
+  fill: rgba(255, 255, 255, 0.28);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.13));
+  backdrop-filter: blur(6px);
+  display: flex;
+}
+
+.cercle_svg{
+  margin: auto auto auto auto;
+  transition: ease-in-out 0.2s;
+  cursor: pointer;
+}
+
+.cercle_svg:hover{
+  scale: 1.2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
