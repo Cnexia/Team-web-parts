@@ -5,17 +5,18 @@ import styles from './Forme.module.scss';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
-export const Forme: React.FC<IFormProps> = ({ context }) => {
-  const [formData, setFormData] = React.useState<IFormData>({
+export const Forme: React.FC<IFormProps> = ({ context, newsId }) => {
+  const [formData] = React.useState<IFormData>({
     id: 0,
     user: context.pageContext.user.displayName,
     likes: 1,
+    newsId: newsId
   });
 
   const [formEntries, setFormEntries] = React.useState<IFormData[]>([]);
 
   React.useEffect(() => {
-    fetchFormData(); 
+    fetchFormData();
     const interval = setInterval(fetchFormData, 2000); // MAJ les données
 
     return () => clearInterval(interval); // Nettoiage
@@ -23,7 +24,7 @@ export const Forme: React.FC<IFormProps> = ({ context }) => {
 
   const fetchFormData = async () => {
     try {
-      const formData = await getFormData(); 
+      const formData = await getFormData(newsId);
       setFormEntries(formData); // MAJ
     } catch (error) {
       console.error('Error fetching form data:', error);
@@ -48,11 +49,12 @@ export const Forme: React.FC<IFormProps> = ({ context }) => {
         await submitForm(formData);
       }
 
-      setFormData({
-        id: 0,
-        user: context.pageContext.user.displayName,
-        likes: 1,
-      });
+      // setFormData({
+      //   id: 0,
+      //   user: context.pageContext.user.displayName,
+      //   likes: 1,
+
+      // });
 
       fetchFormData(); // Rafraîchit les données 
     } catch (error) {
@@ -63,7 +65,14 @@ export const Forme: React.FC<IFormProps> = ({ context }) => {
 
   const isUserLiked = formEntries.some(entry => entry.user === formData.user);
 
-  const totalLikes = formEntries.reduce((total, entry) => total + entry.likes, 0);
+  const totalLikesByNewsId = (id: number) => {
+    return formEntries.reduce((total, entry) => {
+      if (entry.newsId === id) {
+        return total + entry.likes;
+      }
+      return total;
+    }, 0);
+  };
 
   return (
     <div>
@@ -73,7 +82,7 @@ export const Forme: React.FC<IFormProps> = ({ context }) => {
         <div className={styles.button_holder}>
           <button type="submit" className={styles.button} >
             {isUserLiked ? <FavoriteIcon style={{ color: 'red', fontSize: '25px' }} /> : <FavoriteBorderIcon style={{ color: 'white', fontSize: '25px' }} />}
-            <span style={{ color: 'white', fontSize: '12px', display:'flex', height:'25px' , alignItems:'self-end' }}>{totalLikes}</span>
+            <span style={{ color: 'white', fontSize: '12px', display: 'flex', height: '25px', alignItems: 'self-end' }}>{totalLikesByNewsId(newsId)}</span>
           </button>
         </div>
       </form>

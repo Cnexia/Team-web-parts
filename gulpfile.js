@@ -14,3 +14,7 @@ build.rig.getTasks = function () {
 };
 
 build.initialize(require('gulp'));
+
+const gulp = require('gulp');
+const path = require('path');
+

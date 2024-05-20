@@ -31,9 +31,29 @@ const Footer: React.FC = () => {
             {/* Main_url components */}
             <div className={styles.Main_url}>
                 <div className={styles.url_title}>
-                            <a href="#1">
+                            <a href="/CnexiaForEveryone/people-culture">
                                 <strong>
                                     People & Culture
+                                </strong>
+                            </a>
+                </div>
+                <div className={styles.sub_links}>
+                            <a href="#">
+                                Nos Conventions
+                            </a>
+                </div>
+                <div className={styles.sub_links}>
+                            <a href="#3">
+                                Documents
+                            </a>
+                </div>
+            </div>
+
+            <div className={styles.Main_url}>
+                <div className={styles.url_title}>
+                            <a href="#1">
+                                <strong>
+                                    Career
                                 </strong>
                             </a>
                 </div>
@@ -49,32 +69,12 @@ const Footer: React.FC = () => {
                 </div>
             </div>
 
-            <div className={styles.Main_url}>
-                <div className={styles.url_title}>
-                            <a href="#1">
-                                <strong>
-                                    People & Culture
-                                </strong>
-                            </a>
-                </div>
-                <div className={styles.sub_links}>
-                            <a href="#2">
-                                Q&A
-                            </a>
-                </div>
-                <div className={styles.sub_links}>
-                            <a href="#3">
-                                Documents
-                            </a>
-                </div>
-            </div>
-
 
             <div className={styles.Main_url}>
                 <div className={styles.url_title}>
                             <a href="#1">
                                 <strong>
-                                    People & Culture
+                                    Communication
                                 </strong>
                             </a>
                 </div>
@@ -152,7 +152,7 @@ const Footer: React.FC = () => {
                 <div className={styles.line}></div>
                 <div className={styles.copyright}>
                     <p>
-                    © cnexia 2023
+                    © cnexia 2024
                     </p>
                 </div>
             </div>

@@ -2,7 +2,6 @@ import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { Version } from '@microsoft/sp-core-library';
 import { BrowserRouter as Router } from 'react-router-dom'; // Import BrowserRouter and Route
-
 import {
   BaseClientSideWebPart,
   IPropertyPaneConfiguration,
@@ -13,13 +12,10 @@ import { sp } from "@pnp/sp/presets/all";
 import * as strings from 'CommPageV2WebPartStrings';
 
 import './CommPageWebPart.module.scss';
-
 import CommPage from './components/CommPage';
 
-
-
-
-
+// Import the CSS file
+//import './hideElements.js'; // Make sure the path is correct
 
 export default class CareerPageWebPart extends BaseClientSideWebPart<{}> {
 
@@ -28,27 +24,32 @@ export default class CareerPageWebPart extends BaseClientSideWebPart<{}> {
     initialLoad: true,
   };
 
-
   protected onInit(): Promise<void> {
     return super.onInit().then(_ => {
       // other init code may be present
       sp.setup({
         spfxContext: this.context as any
+
+        
       });
+      
+
+      // Hide elements code test V1 (suitenavbar and Sp-barre)
+    
+
+
+
+
     });
   }
 
   public render(): void {
-    
-
     const element: React.ReactElement<{}> = (
-      
       <Router>
         <React.Fragment> {/* Wrap the app with React.Fragment */}
           <CommPage context={this.context}/>
         </React.Fragment>
       </Router>
-      
     );
 
     ReactDom.render(element, this.domElement);

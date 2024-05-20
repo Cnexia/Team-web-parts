@@ -2,6 +2,7 @@ import { sp } from "@pnp/sp/presets/all";
 
 // Define the interface for the data structure
 export interface NewsItem {
+  ID: number;
   News: string;
   Description: string;
   Date: string;
@@ -18,7 +19,7 @@ const formatDate = (date: string): string => {
 // Function to fetch latest news data from SharePoint
 export const fetchLatestNewsData = async (): Promise<NewsItem[]> => {
   try {
-    const response = await sp.web.lists.getByTitle("LatestNewsV2").items.select("News", "Description", "Date", "Link").get();
+    const response = await sp.web.lists.getByTitle("LatestNewsV2").items.select("ID","News", "Description", "Date", "Link").get();
     console.log("Latest News data response:", response);
     if (response && response.length > 0) {
       // Format the date before returning the data

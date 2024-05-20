@@ -3,7 +3,7 @@ import styles from './LatestNews.module.scss';
 
 import Forme from './Likes/Forme';
 import { WebPartContext } from '@microsoft/sp-webpart-base';
-import { fetchLatestNewsData } from './Fetchdata/FetchData';
+import {  NewsItem,fetchLatestNewsData } from './Fetchdata/FetchData';
 import { useEffect, useState } from 'react';
 import CommentService from './CommentService/CommentService';
 
@@ -12,16 +12,11 @@ interface ILatestNewsProps {
     context: WebPartContext;
     
 }
-interface NewsItem {
-    News: string;
-    Description: string;
-    Date: string;
-    Link: string;
-  }
+
 const LatestNews: React.FC<ILatestNewsProps> = (props: ILatestNewsProps) => {
 
     const [isPlaying, setIsPlaying] = React.useState<boolean>(false);
-    const [newsData, setNewsData] = useState<NewsItem[]>([]);
+    const [newsData, setNewsData] = useState<NewsItem[]>([])
     const videoRef = React.useRef<HTMLVideoElement>(null);
     const [commentVisible, setCommentVisible] = React.useState<boolean[]>([]);
     const [commentText, setCommentText] = React.useState<string>('');
@@ -219,7 +214,7 @@ const LatestNews: React.FC<ILatestNewsProps> = (props: ILatestNewsProps) => {
                                     <div className={styles.CB_reactions}>
                                         <div>
                                             
-                                            <Forme context={props.context} />
+                                            <Forme context={props.context} newsId={item.ID} />
 
                                         </div>
                                         <div style={{paddingRight:'5px'}}>   

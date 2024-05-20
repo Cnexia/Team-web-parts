@@ -1,5 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+
+
+
+/* Hide the top SharePoint bar */
+#SuiteNav {
+  display: none !important;
+}
+
+/* Hide the Office 365 Suite Bar */
+#O365_MainLink_Logo {
+  display: none !important;
+}
+
+/* Hide the app bar */
+div[class^='ms-Fabric'] {
+  display: none !important;
+}
+
+/* Hide the global navigation bar */
+div[class^='o365cs-nav'] {
+  display: none !important;
+}
+
   /* ------------------- Globale Iputes ---------------- */
 
   div#sp-appBar{

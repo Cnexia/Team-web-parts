@@ -13,7 +13,7 @@ import Navbar from './Header/navbar';
 const CommPage: React.FC<{ context: WebPartContext }> = ({ context }) => {
     return (
         <div className={styles.CommPage}>
-            <Navbar/>
+            <Navbar />
             <FirstBanner />
             <LatestNews context={context} />
             <UpEvents />

@@ -44,11 +44,7 @@ const Navbar: React.FC = () => {
                 Communication
               </Link>
             </li>
-            <li onClick={removeActive}>
-              <Link to="/CnexiaForEveryone/support" className={`${styles.navLink}`}>
-                Support
-              </Link>
-            </li>
+            
           </ul>
           <div
             className={`${styles.hamburger} ${isActive ? styles.active : ''}`}
