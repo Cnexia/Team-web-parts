@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
-import { Version } from '@microsoft/sp-core-library';
-import { BrowserRouter as Router } from 'react-router-dom'; // Import BrowserRouter and Route
+import { Version, Log } from '@microsoft/sp-core-library';
+import { BrowserRouter as Router } from 'react-router-dom';
 import {
   BaseClientSideWebPart,
   IPropertyPaneConfiguration,
@@ -10,12 +10,21 @@ import {
 import { sp } from "@pnp/sp/presets/all";
 
 import * as strings from 'CommPageV2WebPartStrings';
-
-import './CommPageWebPart.module.scss';
 import CommPage from './components/CommPage';
+import './CommPageWebPart.module.scss';
 
-// Import the CSS file
-//import './hideElements.js'; // Make sure the path is correct
+const LOG_SOURCE: string = "CareerPageWebPart";
+
+// Define predefined element IDs
+const PREDEFINED_ELEMENT_ID1: string = "SuiteNavWrapper";
+const PREDEFINED_ELEMENT_ID2: string = "sp-appBar";
+const PREDEFINED_ELEMENT_ID3: string = "spSiteHeader";
+const PREDEFINED_ELEMENT_ID4: string = "spCommandBar";
+
+// Define predefined class names
+const PREDEFINED_CLASS_NAME1: string = "";
+const PREDEFINED_CLASS_NAME2: string = "";
+const PREDEFINED_CLASS_NAME3: string = "";
 
 export default class CareerPageWebPart extends BaseClientSideWebPart<{}> {
 
@@ -26,28 +35,59 @@ export default class CareerPageWebPart extends BaseClientSideWebPart<{}> {
 
   protected onInit(): Promise<void> {
     return super.onInit().then(_ => {
-      // other init code may be present
+      // Other init code
       sp.setup({
         spfxContext: this.context as any
-
-        
       });
-      
 
-      // Hide elements code test V1 (suitenavbar and Sp-barre)
-    
+      // Hide the predefined elements if they exist
+      this.hideElementById(PREDEFINED_ELEMENT_ID1);
+      this.hideElementById(PREDEFINED_ELEMENT_ID2);
+      this.hideElementById(PREDEFINED_ELEMENT_ID3);
+      this.hideElementById(PREDEFINED_ELEMENT_ID4);
 
+      // Hide the predefined elements by class name if they exist
+      this.hideElementsByClass(PREDEFINED_CLASS_NAME1);
+      this.hideElementsByClass(PREDEFINED_CLASS_NAME2);
+      this.hideElementsByClass(PREDEFINED_CLASS_NAME3);
 
-
-
+      // Additional initialization logic if needed
     });
+  }
+
+  private hideElementById(elementId: string): void {
+    if (elementId) {
+      const spElement: HTMLElement | null = document.getElementById(elementId);
+      if (spElement) {
+        Log.info(LOG_SOURCE, `Found Element with ID ${elementId}`);
+        spElement.style.setProperty("display", "none", "important");
+      } else {
+        Log.info(LOG_SOURCE, `Element with ID ${elementId} not found`);
+      }
+    }
+  }
+
+  private hideElementsByClass(className: string): void {
+    if (className) {
+      const elements: NodeListOf<HTMLElement> = document.querySelectorAll(`.${className}`);
+      if (elements.length > 0) {
+        elements.forEach(element => {
+          Log.info(LOG_SOURCE, `Found Element with Class ${className}`);
+          element.style.setProperty("display", "Block", "important");
+          element.style.minHeight="1080px";
+
+        });
+      } else {
+        Log.info(LOG_SOURCE, `Elements with Class ${className} not found`);
+      }
+    }
   }
 
   public render(): void {
     const element: React.ReactElement<{}> = (
       <Router>
-        <React.Fragment> {/* Wrap the app with React.Fragment */}
-          <CommPage context={this.context}/>
+        <React.Fragment>
+          <CommPage context={this.context} />
         </React.Fragment>
       </Router>
     );

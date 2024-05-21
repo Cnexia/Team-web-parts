@@ -3,7 +3,7 @@
   "solution": {
     "name": "comm-page-v-2-client-side-solution",
     "id": "7b345fe7-67ea-4409-90b6-f90fade4cad0",
-    "version": "3.5.0.3",
+    "version": "3.5.0.7",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -30,7 +30,7 @@
         "title": "comm-page-v-2 Feature",
         "description": "The feature that activates elements of the comm-page-v-2 solution.",
         "id": "b773189a-23aa-4104-96dc-16fe3c6eb561",
-        "version": "3.5.0.3"
+        "version": "3.5.0.7"
       }
     ]
   },
