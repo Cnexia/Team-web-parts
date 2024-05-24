@@ -108,7 +108,21 @@ const LatestNews: React.FC<ILatestNewsProps> = (props: ILatestNewsProps) => {
     fetchData();
   }, []);
 
-    
+     //------------------------------->scrolling behavior<----------------
+     const cardsContainerRef = React.useRef<HTMLDivElement>(null);
+
+
+     const scrollLeft = () => {
+        if (cardsContainerRef.current) {
+            cardsContainerRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+        }
+    };
+
+    const scrollRight = () => {
+        if (cardsContainerRef.current) {
+            cardsContainerRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+        }
+    };
 
     return (
         
@@ -164,8 +178,8 @@ const LatestNews: React.FC<ILatestNewsProps> = (props: ILatestNewsProps) => {
                             <p>Dernières nouvelles</p>
                         </div>
                     </div>
-                    <div className={styles.LN_Cards}>
-                        <div className={styles.cards_container}>
+                    <div className={styles.LN_Cards} ref={cardsContainerRef}>
+                        <div className={styles.cards_container} >
 
                         {newsData.map((item, index) => (
                             <div className={styles.card} key={index}>
@@ -244,6 +258,22 @@ const LatestNews: React.FC<ILatestNewsProps> = (props: ILatestNewsProps) => {
                            
 
                         </div>
+                        
+                    </div>
+                    <div className={styles.btns_container}>
+                            <button className={styles.btn_left} onClick={scrollLeft}>
+                                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6.707 2.293C6.51947 2.10553 6.26516 2.00021 6 2.00021C5.73484 2.00021 5.48053 2.10553 5.293 2.293L0.793 6.793C0.605529 6.98053 0.500214 7.23484 0.500214 7.5C0.500214 7.76516 0.605529 8.01947 0.793 8.207L5.293 12.707C5.4816 12.8892 5.7342 12.99 5.9964 12.9877C6.2586 12.9854 6.50941 12.8802 6.69482 12.6948C6.88023 12.5094 6.9854 12.2586 6.98767 11.9964C6.98995 11.7342 6.88916 11.4816 6.707 11.293L4 8.5H13.5C13.7652 8.5 14.0196 8.39464 14.2071 8.20711C14.3946 8.01957 14.5 7.76522 14.5 7.5C14.5 7.23478 14.3946 6.98043 14.2071 6.79289C14.0196 6.60536 13.7652 6.5 13.5 6.5H4L6.707 3.707C6.89447 3.51947 6.99979 3.26516 6.99979 3C6.99979 2.73484 6.89447 2.48053 6.707 2.293Z" fill="#58C1A3"/>
+                                </svg>
+
+
+                            </button>
+                            <button className={styles.btn_right} onClick={scrollRight}>
+                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.293 2.293C8.48053 2.10553 8.73484 2.00021 9 2.00021C9.26516 2.00021 9.51947 2.10553 9.707 2.293L14.207 6.793C14.3945 6.98053 14.4998 7.23484 14.4998 7.5C14.4998 7.76516 14.3945 8.01947 14.207 8.207L9.707 12.707C9.5184 12.8892 9.2658 12.99 9.0036 12.9877C8.7414 12.9854 8.49059 12.8802 8.30518 12.6948C8.11977 12.5094 8.0146 12.2586 8.01233 11.9964C8.01005 11.7342 8.11084 11.4816 8.293 11.293L11 8.5H1.5C1.23478 8.5 0.98043 8.39464 0.792893 8.20711C0.605357 8.01957 0.5 7.76522 0.5 7.5C0.5 7.23478 0.605357 6.98043 0.792893 6.79289C0.98043 6.60536 1.23478 6.5 1.5 6.5H11L8.293 3.707C8.10553 3.51947 8.00021 3.26516 8.00021 3C8.00021 2.73484 8.10553 2.48053 8.293 2.293Z" fill="#58C1A3"/>
+                            </svg>
+
+                            </button>
                     </div>
                 </div>
             </div>

@@ -1,56 +1,65 @@
 .FirstBanner_container{
     width: 100%;
-    height: 550px;
+    height: 400px;
     position: relative;
-    overflow: hidden;
+    background-color: #DFF9F1;
 }
 .FB_background{
     position: relative;
+    max-width: 1920px;
+    margin: 0 auto;
     width: 100%;
     height: 100%;
-    background-color:#002920;
+    
 }
-.FB_Motif{
-    position: absolute;
+.FB_holder{
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+    
+    overflow: hidden;
+}
+
+.FB_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 0 3rem 0 0;
+    
+}
+.FB_content{
+    display: block;
+    overflow: hidden;
+    padding: 3rem 0 3rem  3rem ;
+    p{
+        font-size: 70px;
+        font-weight: 700;
+        color: #FFBE5B;
+        margin: 0;
+    }
+}
+.FB_img{
+    width: 80%;
+    
+    display: flex;
+}
+.shape_holder{
+    position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
-}
-.FB_Motif img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.FB_Illustration{
-    position: absolute;
-    top: 25%;
-    left: 0;
-    z-index: 2;
-}
-.FB_Illustration img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    scale: .9;
-}
-
-.FB_Logo{
-    position: absolute;
-    top: 35%;
-    left: 0;
     display: flex;
-    
-    z-index: 3;
-}
-.FB_Logo img{
+    align-items: flex-end;
+    justify-content: flex-start;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    scale: .75;
 }
+
+
+
+
+
 
 @media screen and (min-width: 1400px){
     .FB_Illustration{

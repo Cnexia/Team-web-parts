@@ -2,8 +2,10 @@ import * as React from 'react';
 import { IFormProps, IFormData } from './IFormProps';
 import { submitForm, getFormData, deleteFormData } from './FormeService';
 import styles from './Forme.module.scss';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+// import FavoriteIcon from '@mui/icons-material/Favorite';
+// import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
+import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 
 export const Forme: React.FC<IFormProps> = ({ context, newsId }) => {
   const [formData] = React.useState<IFormData>({
@@ -81,7 +83,7 @@ export const Forme: React.FC<IFormProps> = ({ context, newsId }) => {
         <input type="hidden" id="likes" name="likes" value={formData.likes} />
         <div className={styles.button_holder}>
           <button type="submit" className={styles.button} >
-            {isUserLiked ? <FavoriteIcon style={{ color: 'red', fontSize: '25px' }} /> : <FavoriteBorderIcon style={{ color: 'white', fontSize: '25px' }} />}
+            {isUserLiked ? <ThumbUpAltIcon style={{ color: '#5284DD', fontSize: '25px' }} /> : <ThumbUpOffAltIcon style={{ color: 'white', fontSize: '25px' }} />}
             <span style={{ color: 'white', fontSize: '12px', display: 'flex', height: '25px', alignItems: 'self-end' }}>{totalLikesByNewsId(newsId)}</span>
           </button>
         </div>

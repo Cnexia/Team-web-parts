@@ -39,12 +39,12 @@ const Footer: React.FC = () => {
                 </div>
                 <div className={styles.sub_links}>
                             <a href="#">
-                                Nos Conventions
+                                
                             </a>
                 </div>
                 <div className={styles.sub_links}>
                             <a href="#3">
-                                Documents
+                                
                             </a>
                 </div>
             </div>
@@ -59,12 +59,12 @@ const Footer: React.FC = () => {
                 </div>
                 <div className={styles.sub_links}>
                             <a href="#2">
-                                Q&A
+                                
                             </a>
                 </div>
                 <div className={styles.sub_links}>
                             <a href="#3">
-                                Documents
+                                
                             </a>
                 </div>
             </div>
@@ -80,12 +80,12 @@ const Footer: React.FC = () => {
                 </div>
                 <div className={styles.sub_links}>
                             <a href="#2">
-                                Q&A
+                                
                             </a>
                 </div>
                 <div className={styles.sub_links}>
                             <a href="#3">
-                                Documents
+                                
                             </a>
                 </div>
             </div>
@@ -97,7 +97,7 @@ const Footer: React.FC = () => {
             <div className={styles.social_section}>
                 <div className={styles.social}>
                     <div className='social_holder'>
-                    <a href="#">
+                    <a href="https://www.facebook.com/cnexia/">
                         <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="19.5" cy="19.5" r="19.5" fill="white"/>
                                         <g clip-path="url(#clip0_252_3)">
@@ -112,7 +112,7 @@ const Footer: React.FC = () => {
                     </a>
                     </div>
                     <div className='social_holder'>
-                    <a href="#">
+                    <a href="https://www.linkedin.com/company/cnexia/">
                     <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="19.5" cy="19.5" r="19.5" fill="white"/>
                             <g clip-path="url(#clip0_252_3)">
@@ -134,7 +134,7 @@ const Footer: React.FC = () => {
                     </a>
                     </div>
                     <div className='social_holder'>
-                    <a href="#">
+                    <a href="https://www.instagram.com/cnexiagroupe/?hl=en">
                     <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="19.5" cy="19.5" r="19.5" fill="white"/>
                         <path d="M19.9999 24.4443C17.5453 24.4443 15.5554 22.4544 15.5554 19.9999C15.5554 17.5453 17.5453 15.5554 19.9999 15.5554C22.4545 15.5554 24.4443 17.5453 24.4443 19.9999C24.4443 22.4544 22.4545 24.4443 19.9999 24.4443Z" stroke="#044123" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

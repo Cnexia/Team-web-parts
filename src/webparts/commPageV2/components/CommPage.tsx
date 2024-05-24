@@ -9,6 +9,7 @@ import UpEvents from './Upcoming Events/UpEvents';
 import Qlinks from './Quick Links/Qlinks';
 import Footer from './Footer/footer';
 import Navbar from './Header/navbar';
+import ContactUs from './Contactez nous/ContactUs';
 
 const CommPage: React.FC<{ context: WebPartContext }> = ({ context }) => {
     return (
@@ -18,6 +19,7 @@ const CommPage: React.FC<{ context: WebPartContext }> = ({ context }) => {
             <LatestNews context={context} />
             <UpEvents />
             <Qlinks />
+            <ContactUs/>
             <Footer />
         </div>
     );
