@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "comm-page-client-side-solution-using-google-maps-API",
+    "id": "a5a0bd94-bce7-471c-8fec-c4e2e66eb6e1",
+    "version": "1.1.0.4",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "Ameur Mohammed",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.18.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "CommPage description"
+      },
+      "longDescription": {
+        "default": "CommPage description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "comm-page Feature Map API with LeafletJs",
+        "description": "The feature that activates elements of the comm-page solution.",
+        "id": "1fc4dbc0-6c8d-4241-b936-f0db9cb597be",
+        "version": "1.1.0.4"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/comm-page.sppkg"
+  }
+}
