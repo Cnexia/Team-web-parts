@@ -3,7 +3,7 @@
     height: 550px;
     position: relative;
     overflow: hidden;
-    background-color: #58C1A3;
+    background-color: #ffffff;
 }
 
 
@@ -163,13 +163,16 @@
     flex-direction: column;
     padding: .75rem;
     border-radius: .5rem;
-    background-color: #DFF9F1;
+    background-color: #03B586;
     gap: .5rem;
     
     justify-content: space-between;
+    box-shadow: 2px 3px 52px -9px rgba(3,181,134,0.42);
+    -webkit-box-shadow: 2px 3px 52px -9px rgba(3,181,134,0.42);
+    -moz-box-shadow: 2px 3px 52px -9px rgba(3,181,134,0.42);
 }
 .C_top{
-    color: #03B586;
+    color: #ffffff;
     font-size: 11.5px;
     font-weight: 700;
 }
@@ -184,13 +187,14 @@
     }
     .CC_date{
         font-size: 9.59px;
-        color: #AAAAAA;
+        color: #ffffff;
     }
     .CC_Content{
         font-size: 11.5px;
         font-weight: 400;
         overflow-y: auto;
         height: 90px;
+        color: #ffffff;
     }
 }
 
@@ -251,10 +255,10 @@
 
 }
 .CommentPart_btn{
-    background-color: #03B586;
+    background-color: #ffffff;
     border: none;
     text-decoration: none;
-    color: white;
+    color: #002920;
     border-radius: .5rem;
     width: fit-content;
     padding: .3rem;
@@ -262,4 +266,5 @@
 }
 .CommentPart_btn:hover{
     background-color: #002920;
+    color: white;
 }

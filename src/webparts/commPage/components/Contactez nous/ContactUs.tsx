@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from './ContactUs.module.scss';
 import ContactService from '../Contactez nous/services/ContactService';
 import 'leaflet/dist/leaflet.css';
-import * as L from 'leaflet';
+// import * as L from 'leaflet';
 
 
 
@@ -11,7 +11,7 @@ const ContactUs: React.FC = () => {
   const [newComment, setNewComment] = React.useState('');
   const [userEmail, setUserEmail] = React.useState('');
   const contactService = new ContactService();
-  const mapContainerRef = React.createRef<HTMLDivElement>(); // Ref for the map container
+//   const mapContainerRef = React.createRef<HTMLDivElement>(); // Ref for the map container
   
 
   
@@ -47,41 +47,41 @@ const ContactUs: React.FC = () => {
 
   
 
-  React.useEffect(() => {
-    const mapContainer = mapContainerRef.current;
+//   React.useEffect(() => {
+//     const mapContainer = mapContainerRef.current;
 
-    if (mapContainer) {
-      const map = L.map(mapContainer).setView([33.5731, -5.7915], 6); // Set initial map view (Sefrou, Morocco)
-      map.attributionControl.remove();
+//     if (mapContainer) {
+//       const map = L.map(mapContainer).setView([33.5731, -5.7915], 6); // Set initial map view (Sefrou, Morocco)
+//       map.attributionControl.remove();
 
-      // Define your SVG marker icons (replace with your actual SVG content)
-      const markerIcon1 = L.icon({
-        iconUrl: '/sites/CnexiaForEveryone/Assets/Pointeur.svg', // Replace with your SVG content
-        iconSize: [25, 40], // Adjust icon size as needed
-      });
+//       // Define your SVG marker icons (replace with your actual SVG content)
+//       const markerIcon1 = L.icon({
+//         iconUrl: '/sites/CnexiaForEveryone/Assets/Pointeur.svg', // Replace with your SVG content
+//         iconSize: [25, 40], // Adjust icon size as needed
+//       });
       
 
-      const markerIcon2 = L.icon({
-        iconUrl: '/sites/CnexiaForEveryone/Assets/Pointeur.svg', // Replace with your SVG content
-        iconSize: [25, 40], // Adjust icon size as needed
-      });
+//       const markerIcon2 = L.icon({
+//         iconUrl: '/sites/CnexiaForEveryone/Assets/Pointeur.svg', // Replace with your SVG content
+//         iconSize: [25, 40], // Adjust icon size as needed
+//       });
 
-      // Add markers with SVG icons and popups
-      L.marker([33.992735, -6.719636], { icon: markerIcon1 }).addTo(map)
-        .bindPopup("<b>Cnexia Rabat</b><br>This is the first marker.");
+//       // Add markers with SVG icons and popups
+//       L.marker([33.992735, -6.719636], { icon: markerIcon1 }).addTo(map)
+//         .bindPopup("<b>Cnexia Rabat</b><br>This is the first marker.");
 
-      L.marker([34.009555, -4.958780], { icon: markerIcon2 }).addTo(map)
-        .bindPopup("<b>Cnexia Fès</b><br>This is the second marker.");
+//       L.marker([34.009555, -4.958780], { icon: markerIcon2 }).addTo(map)
+//         .bindPopup("<b>Cnexia Fès</b><br>This is the second marker.");
 
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      }).addTo(map);
+//       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+//       }).addTo(map);
 
-      // ... (Add custom markers or layers if needed)
-    } else {
-      console.error('Map container element not yet available');
-    }
-  }, []);
+//       // ... (Add custom markers or layers if needed)
+//     } else {
+//       console.error('Map container element not yet available');
+//     }
+//   }, []);
 
 
 
@@ -98,28 +98,14 @@ const ContactUs: React.FC = () => {
             <div className={styles.ContactUs_container}>
                 <div className={styles.container}>
                     <div className={styles.left_map}>
-                        <div  className={styles.map_container} ref={mapContainerRef}>
+                        <div  className={styles.map_container} >
+                          <img src="/sites/CnexiaForEveryone/Assets/IdeaBox.svg" alt="" />
                         
                         </div>
                     </div>
                     <div className={styles.UpE_right}>
-                        <div className={styles.Contact_title}>
-                            <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path opacity="0.5" d="M18.7395 28.1488L17.9941 29.4081C17.3298 30.5305 15.6701 30.5305 15.0058 29.4081L14.2604 28.1488C13.6823 27.172 13.3932 26.6836 12.9288 26.4135C12.4645 26.1435 11.8799 26.1334 10.7107 26.1132C8.98455 26.0835 7.90197 25.9777 6.99405 25.6017C5.30948 24.9039 3.9711 23.5655 3.27333 21.8809C2.75 20.6175 2.75 19.0158 2.75 15.8125V14.4375C2.75 9.93653 2.75 7.68605 3.7631 6.03282C4.32998 5.10775 5.10775 4.32998 6.03282 3.7631C7.68605 2.75 9.93653 2.75 14.4375 2.75H18.5625C23.0635 2.75 25.314 2.75 26.9672 3.7631C27.8922 4.32998 28.67 5.10775 29.2369 6.03282C30.25 7.68605 30.25 9.93653 30.25 14.4375V15.8125C30.25 19.0158 30.25 20.6175 29.7267 21.8809C29.0289 23.5655 27.6905 24.9039 26.0059 25.6017C25.098 25.9777 24.0154 26.0835 22.2893 26.1132C21.1201 26.1334 20.5354 26.1435 20.0711 26.4135C19.6068 26.6836 19.3177 27.172 18.7395 28.1488L18.7395 28.1488Z" fill="#00966C"/>
-                                <path d="M23.375 15.125C23.375 15.8844 22.7594 16.5 22 16.5C21.2406 16.5 20.625 15.8844 20.625 15.125C20.625 14.3656 21.2406 13.75 22 13.75C22.7594 13.75 23.375 14.3656 23.375 15.125Z" fill="#002920"/>
-                                <path d="M17.875 15.125C17.875 15.8844 17.2594 16.5 16.5 16.5C15.7406 16.5 15.125 15.8844 15.125 15.125C15.125 14.3656 15.7406 13.75 16.5 13.75C17.2594 13.75 17.875 14.3656 17.875 15.125Z" fill="#002920"/>
-                                <path d="M12.375 15.125C12.375 15.8844 11.7594 16.5 11 16.5C10.2406 16.5 9.625 15.8844 9.625 15.125C9.625 14.3656 10.2406 13.75 11 13.75C11.7594 13.75 12.375 14.3656 12.375 15.125Z" fill="#002920"/>
-                            </svg>
-
-                            <p>
-                                Boite à idées
-                            </p>
-                        </div>
-                        <div className={styles.Contact_content}>
-                            <p>
-                                Vous avez une idée ? Une suggestion ? Partagez là avec nous en remplissant ce formulaire.
-                            </p>
-                        </div>
+                        
+                        
                         <div className={styles.contact_form}>
                             <div className={styles.Email}>
                                 <p>

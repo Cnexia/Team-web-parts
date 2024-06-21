@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
               </Link>
             </li>
             <li onClick={removeActive}>
-              <Link to="/sites/CnexiaForEveryone/SitePages/CommPageV5" className={`${styles.navLink}`}>
+              <Link to="/sites/CnexiaForEveryone/SitePages/CommPageV5.aspx" className={`${styles.navLink}`}>
                 Communication
               </Link>
             </li>
