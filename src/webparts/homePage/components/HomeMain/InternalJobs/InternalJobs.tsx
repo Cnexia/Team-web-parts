@@ -1,33 +1,34 @@
 import * as React from 'react';
-import { sp } from "@pnp/sp/presets/all";
 import { useEffect, useState } from "react";
 import styles from './InternalJobs.module.scss';
+import { sp } from "@pnp/sp/presets/all";
 
 interface InternalOffersItem {
   offre_title: string;
   short_description: string;
   deadline: string;
   city: string;
-  fileUrl:string;
+  fileUrl: string;
+  category: string; // Ajouter la propriété category à InternalOffersItem
 }
 
 const InternalJobs: React.FC = () => {
-  const [JobsData, setJobsData] = useState<InternalOffersItem[]>([]);
+  const [jobsData, setJobsData] = useState<InternalOffersItem[]>([]);
   const [filteredJobs, setFilteredJobs] = useState<InternalOffersItem[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>('');
-  
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null); // État local pour stocker la catégorie sélectionnée
 
-
-  // Function to format the deadline
+  // Fonction pour formater la date limite
   const formatDeadline = (deadline: string): string => {
     const date = new Date(deadline);
     const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-    return date.toLocaleDateString('fr-FR',options);
+    return date.toLocaleDateString('fr-FR', options);
   };
 
+  // Fonction pour récupérer les données des offres d'emploi
   const fetchJobsData = async () => {
     try {
-      const response = await sp.web.lists.getByTitle("BackOfficeV1").items.select("offre_title", "short_description", "deadline", "city", "fileUrl").get();
+      const response = await sp.web.lists.getByTitle("BackOfficeV1").items.select("offre_title", "short_description", "deadline", "city", "fileUrl", "category").get();
       console.log("Internal Jobs data response:", response);
       if (response && response.length > 0) {
         return response;
@@ -41,25 +42,46 @@ const InternalJobs: React.FC = () => {
     }
   };
 
+  // Filtrer les emplois en fonction du terme de recherche et de la catégorie sélectionnée
+  const filterJobs = (searchTerm: string, category: string | null) => {
+    let filtered = jobsData;
+
+    if (searchTerm !== '') {
+      filtered = filtered.filter(job =>
+        job.offre_title.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+
+    if (category !== null) {
+      filtered = filtered.filter(job =>
+        job.category === category
+      );
+    }
+
+    setFilteredJobs(filtered);
+  };
+
   useEffect(() => {
     const getData = async () => {
-      const InternalJobs = await fetchJobsData();
-      setJobsData(InternalJobs);
-      setFilteredJobs(InternalJobs); // Initialize filtered jobs with all jobs -- working
-      console.log("InternalJobs data:", InternalJobs);
+      const internalJobs = await fetchJobsData();
+      setJobsData(internalJobs);
+      setFilteredJobs(internalJobs); // Initialiser les emplois filtrés avec tous les emplois -- fonctionne
+      console.log("InternalJobs data:", internalJobs);
     };
     getData();
   }, []);
 
+  // Gérer le changement de terme de recherche
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     const searchTerm = event.target.value.toLowerCase();
     setSearchTerm(searchTerm);
+    filterJobs(searchTerm, selectedCategory);
+  };
 
-    // Filter jobs based on search term -it's work BINGO
-    const filteredJobs = JobsData.filter(job =>
-      job.offre_title.toLowerCase().includes(searchTerm)
-    );
-    setFilteredJobs(filteredJobs);
+  // Gérer le filtre par catégorie
+  const handleCategoryFilter = (category: string | null) => {
+    setSelectedCategory(category);
+    filterJobs(searchTerm, category);
   };
 
   return (
@@ -100,6 +122,12 @@ const InternalJobs: React.FC = () => {
             onChange={handleSearch}
           />
         </div>
+        <div  className={styles.buttonContainer}>
+            <button onClick={() => handleCategoryFilter(null)} className={selectedCategory === null ? styles.active : ''}>Tous</button>
+            <button onClick={() => handleCategoryFilter('CRM')} className={selectedCategory === 'CRM' ? styles.active : ''}>CRM</button>
+            <button onClick={() => handleCategoryFilter('Tech')} className={selectedCategory === 'Tech' ? styles.active : ''}>Tech</button>
+            <button onClick={() => handleCategoryFilter('Fonctions Support')} className={selectedCategory === 'Fonction Support' ? styles.active : ''}>Fonction Support</button>
+          </div>
         <div className={styles.Jobs_holder_scroller}>
           {filteredJobs.map((job: InternalOffersItem, index: number) => (
             <div>

@@ -19,9 +19,10 @@
                         'N5 N6 N7'
                         'N8 N8 N7';
     gap: 1rem;
+    margin: 0 auto;
 }
 .N1_holder, .N2_holder, .N3_holder, .N4_holder, .N5_holder, .N6_holder, .N7_holder, .N8_holder {
-   min-width: 537;
+   min-width: 450px;
    min-height: 499px;
    width: 100%;
    overflow: hidden;

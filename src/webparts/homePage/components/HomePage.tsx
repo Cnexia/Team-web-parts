@@ -3,6 +3,7 @@ import styles from './HomePage.module.scss';
 import { WebPartContext } from '@microsoft/sp-webpart-base';
 import  { useEffect, useRef } from 'react';
 import HomeMaine from './HomeMain/HomeMaine';
+import News from './NewsTicker/News';
 
 
 
@@ -35,7 +36,8 @@ const CommPage: React.FC<{ context: WebPartContext }> = ({ context }) => {
     return (
         <div className={styles.CommPage}>
             <Navbar />
-           <HomeMaine/>
+            <News/>
+            <HomeMaine context={context}/>
             <Footer />
         </div>
     );
